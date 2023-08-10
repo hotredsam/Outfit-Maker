@@ -3,9 +3,8 @@ import './App.css';
 import React from 'react';
 import Instructions from './Instructions';
 import Header from './Header';
-import {Route, Routes} from 'react-router-dom';
-// import { Link } from 'react-router-dom';
-import { BrowserRouter as router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+
 
 function App() {
   return (
