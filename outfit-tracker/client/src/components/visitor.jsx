@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import videoBg from '../assets/clothing.mp4'
+import Button from 'react-bootstrap/Button';
 export default function Visitor() {
     return (
         <div>
@@ -19,8 +20,9 @@ export default function Visitor() {
             <div className="overlay"></div>
             <video src={videoBg} autoPlay loop muted />
             <div className="content">
-                <h1>Outfit Tracker</h1>
+                <h1>Outfit Maker</h1>
                 <p>Outfit planning made easy!</p>
+                <Button variant="primary" href="#createAccount">Get Started</Button>
             </div>
         </div>
     )
