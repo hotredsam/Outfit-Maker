@@ -1,11 +1,17 @@
 import React from 'react';
-import DashboardPage from './DashboardPage'; // Adjust the path if necessary
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
-    <div>
-      <DashboardPage />
-    </div>
+    <Navbar>
+      <Router>
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+        </Routes>
+      </Router>
+    </Navbar>
   );
 };
 
