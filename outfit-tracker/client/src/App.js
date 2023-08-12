@@ -5,6 +5,7 @@ import CreateOutfitForm from './components/CreateOutfitForm';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CreateAccountForm from './components/CreateAccountForm';
+import LoginForm from './components/LoginForm';
 
 function App() {
   const outfits = useSelector(state => state.outfits);
@@ -26,10 +27,12 @@ function App() {
       <Link to="/create">Create New Outfit</Link>
         <Link to="/upload">Upload Image</Link>
         <Link to="/create-account">Create Account</Link>
+        <Link to="/login">Login</Link>
       </div>
       <Route path="/create" component={CreateOutfitForm} />
       <Route path="/upload" component={UploadImageForm} />
       <Route path="/create-account" component={CreateAccountForm} />
+      <Route path="/login" component={LoginForm} />
     </BrowserRouter>
   );
 }

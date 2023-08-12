@@ -1,4 +1,4 @@
-import { FETCH_OUTFITS_SUCCESS, CREATE_OUTFIT_SUCCESS, UPLOAD_IMAGE_SUCCESS } from '../actions/outfitActions';
+import { FETCH_OUTFITS_SUCCESS, CREATE_OUTFIT_SUCCESS, UPLOAD_IMAGE_SUCCESS, SAVE_OUTFIT } from '../actions/outfitActions';
 
 const initialState = {
   outfits: [],
@@ -21,11 +21,25 @@ const outfitReducer = (state = initialState, action) => {
               ...state,
               images: [...state.images, action.payload],
             };
-          default:
-            return state;
-        }
-      };
- 
+            case SAVE_OUTFIT:
+                const updatedOutfits = state.outfits.map(outfit => {
+                  if (outfit.id === action.payload) {
+                    return {
+                      ...outfit,
+                      saved: true,
+                    };
+                  }
+                  return outfit;
+                });
+                return {
+                  ...state,
+                  outfits: updatedOutfits,
+                };
+              default:
+                return state;
+            }
+          };
+          
 export default outfitReducer;
 
 

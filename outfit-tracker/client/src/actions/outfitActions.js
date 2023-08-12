@@ -47,3 +47,11 @@ export const uploadImage = formData => dispatch => {
   const uploadedImage = { id: Date.now(), imageUrl: 'path_to_uploaded_image', name: formData.get('name') };
   dispatch(uploadImageSuccess(uploadedImage));
 };
+
+
+export const SAVE_OUTFIT = 'SAVE_OUTFIT';
+
+export const saveOutfit = outfitId => ({
+  type: SAVE_OUTFIT,
+  payload: outfitId,
+});
