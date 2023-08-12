@@ -1,26 +1,13 @@
-import './App.css';
-import React from 'react';
-import Instructions from './Instructions';
-import Header from './Header';
-import {Route, Routes} from 'react-router-dom';
-import { BrowserRouter as router, Link } from 'react-router-dom';
+import React from "react";
+import Visitor from "./components/visitor";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
   return (
-    <Routes>
-      <Route index element={
-        <main>
-        <Header/>
-      <Instructions/>
-    </main>
-       } />
-      <Route path={"/Login"} element={
-        <div>Login Page</div>
-      }/>
-      <Route path={"/Register"} element={
-        <div>Register Page</div>
-      }/>
-    </Routes>
+    <div>
+      <Visitor/>
+    </div>
   );
 }
+
 export default App;
