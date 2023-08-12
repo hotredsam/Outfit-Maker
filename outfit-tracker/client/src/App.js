@@ -6,6 +6,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import CreateAccountForm from './components/CreateAccountForm';
 import LoginForm from './components/LoginForm';
+import Visitor from './components/visitor';
+import UploadImageForm from './components/UploadImageForm';
+// import ViewOutfits from './components/ViewOutfits';
+
 
 function App() {
   const outfits = useSelector(state => state.outfits);
@@ -28,11 +32,13 @@ function App() {
         <Link to="/upload">Upload Image</Link>
         <Link to="/create-account">Create Account</Link>
         <Link to="/login">Login</Link>
+        <Link to="/visitor">Visitor</Link>
       </div>
       <Route path="/create" component={CreateOutfitForm} />
       <Route path="/upload" component={UploadImageForm} />
       <Route path="/create-account" component={CreateAccountForm} />
       <Route path="/login" component={LoginForm} />
+      <Route path="/visitor" component={Visitor} />
     </BrowserRouter>
   );
 }

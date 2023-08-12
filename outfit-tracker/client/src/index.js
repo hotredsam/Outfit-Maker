@@ -1,24 +1,41 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import './index.css';
+import ReactDOM from 'react-dom/client';
 import App from './App';
-import outfitReducer from './reducers/outfitReducer';
+import {BrowserRouter} from 'react-router-dom';
 
-const rootReducer = combineReducers({
-  outfits: outfitReducer,
-});
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-
-ReactDOM.render(
-  <Provider store={store}>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
     <App />
-  </Provider>,
-  document.getElementById('root')
+    </BrowserRouter>
+  </React.StrictMode>
 );
+
+
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import { createStore, applyMiddleware, combineReducers } from 'redux';
+// import { Provider } from 'react-redux';
+// // import thunk from 'redux-thunk';
+// import './index.css';
+// import App from './App';
+// import outfitReducer from './reducers/outfitReducer';
+
+// const rootReducer = combineReducers({
+//   outfits: outfitReducer,
+// });
+
+// const store = createStore(rootReducer, applyMiddleware(thunk));
+
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// );
 
 
 
