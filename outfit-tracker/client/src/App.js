@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
 import Navbar from './components/Navbar';
 import CreateAccountForm from './pages/CreateAccount';
+import ViewItems from './components/viewItems';
 
 const App = () => {
   return (
@@ -11,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/upload" element={<DashboardPage />} />
-          <Route path="/viewitems" element={<DashboardPage />} />
+          <Route path="/viewitems" element={<ViewItems />} />
           <Route path="/createoutfits" element={<DashboardPage />} />
           <Route path="/viewoutfits" element={<DashboardPage />} />
           <Route path="/createaccount" element={<CreateAccountForm />} />
