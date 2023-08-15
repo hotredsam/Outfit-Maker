@@ -1,6 +1,8 @@
-import Sidebar from './Sidebar'
-import './Navbar.css'
-import Footer from './Footer'
+import Sidebar from './Sidebar';
+import './Navbar.css';
+import Footer from './Footer';
+import { Link } from 'react-router-dom';
+
 
 const Navbar = ({ children }) => {
   return (
@@ -9,15 +11,27 @@ const Navbar = ({ children }) => {
         <div className="left-section">
           <img src="./logo.svg" alt="Logo" className="logo" />
           <div className="nav-buttons">
-            <button className="nav-button">Upload Images</button>
-            <button className="nav-button">View Items</button>
-            <button className="nav-button">Create Outfits</button>
-            <button className="nav-button">View Outfits</button>
+            <Link to="/upload">
+              <button className="nav-button">Upload Images</button>
+            </Link>
+            <Link to="/viewitems">
+              <button className="nav-button">View Items</button>
+            </Link>
+            <Link to="/createoutfits">
+              <button className="nav-button">Create Outfits</button>
+            </Link>
+            <Link to="/viewoutfits">
+              <button className="nav-button">View Outfits</button>
+            </Link>
           </div>
+
         </div>
         <div className="right-section">
-          <button className="account-button">Account</button>
+          <Link to="/account">
+            <button className="account-button">Account</button>
+          </Link>
         </div>
+
       </div>
       <div className="app-content-container">
         <div className="app-sidebar-container">
