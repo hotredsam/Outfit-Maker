@@ -21,8 +21,12 @@ function App() {
 
   return (
     <div>
-      {/* Hello World */}
       <Visitor />
+      </div>
+      <div>
+        <Link to="/create-account">Create Account</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/visitor">Visitor</Link>
       </div>
     );
   }
@@ -34,9 +38,7 @@ function App() {
       </ul>
       <Link to="/create">Create New Outfit</Link>
         <Link to="/upload">Upload Image</Link>
-        <Link to="/create-account">Create Account</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/visitor">Visitor</Link>
+
         <Route path="/create" component={CreateOutfitForm} />
         <Route path="/upload" component={UploadImageForm} />
         <Route path="/create-account" component={CreateAccountForm} />
