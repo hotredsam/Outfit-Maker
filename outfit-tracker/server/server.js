@@ -1,9 +1,13 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const db = require("./db")
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 // GET ALL CLOTHING
@@ -79,8 +83,10 @@ app.delete("/clothing/:id", async (req, res) => {
 // SIGNUP
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body
+  const salt = bcrypt.genSaltSync(10)
+  const hashedPassword = bcrypt.hashSync(password, salt)
   try {
-
+    await db.query("INSERT")
   }catch (err) {
     console.error(err)
   }
