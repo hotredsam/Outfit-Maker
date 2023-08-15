@@ -10,10 +10,10 @@ export default function Visitor() {
         <div>
             <Navbar bg="light" data-bs-theme="light">
                 <Container>
-                    <Navbar.Brand href="#home">Outfit Maker</Navbar.Brand>
+                    <Navbar.Brand href="/">Outfit Maker</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#login">Login</Nav.Link>
-                        <Nav.Link href="#register">Register</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
+                        <Nav.Link href="/register">Register</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
@@ -22,7 +22,7 @@ export default function Visitor() {
             <div className="content">
                 <h1>Outfit Maker</h1>
                 <p>Outfit planning made easy!</p>
-                <Button variant="primary" href="#createAccount">Get Started</Button>
+                <Button variant="primary" href="/register">Get Started</Button>
             </div>
         </div>
     )
