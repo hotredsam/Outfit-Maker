@@ -22,8 +22,6 @@ function App() {
   return (
     <div>
       <Visitor />
-      </div>
-      <div>
         <Link to="/create-account">Create Account</Link>
         <Link to="/login">Login</Link>
         <Link to="/visitor">Visitor</Link>
