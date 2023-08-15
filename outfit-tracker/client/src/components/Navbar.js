@@ -12,7 +12,7 @@ const Navbar = ({ children }) => {
           <img src="./logo.svg" alt="Logo" className="logo" />
           <div className="nav-buttons">
             <Link to="/upload">
-              <button className="nav-button">Upload Images</button>
+            <button className="nav-button">Upload Images</button>
             </Link>
             <Link to="/viewitems">
               <button className="nav-button">View Items</button>
