@@ -1,28 +1,32 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchOutfits } from './actions/outfitActions'; // Create this file
-import CreateOutfitForm from './components/CreateOutfitForm';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { fetchOutfits } from './actions/outfitActions'; // Create this file
+// import CreateOutfitForm from './components/CreateOutfitForm';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import CreateAccountForm from './components/CreateAccountForm';
-import LoginForm from './components/LoginForm';
+// import CreateAccountForm from './components/CreateAccountForm';
+// import LoginForm from './components/LoginForm';
 import Visitor from './components/visitor';
-import UploadImageForm from './components/UploadImageForm';
+// import UploadImageForm from './components/UploadImageForm';
 // import ViewOutfits from './components/ViewOutfits';
 
 
 function App() {
-  const outfits = useSelector(state => state.outfits);
-  const dispatch = useDispatch();
+  // const outfits = useSelector(state => state.outfits);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchOutfits());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchOutfits());
+  // }, [dispatch]);
 
   return (
-    <BrowserRouter>
     <div>
-      <h1>View Outfits</h1>
+      {/* Hello World */}
+      <Visitor />
+      </div>
+    );
+  }
+      {/* <h1>View Outfits</h1>
       <ul>
         {outfits.map(outfit => (
           <li key={outfit.id}>{outfit.name}</li>
@@ -33,15 +37,12 @@ function App() {
         <Link to="/create-account">Create Account</Link>
         <Link to="/login">Login</Link>
         <Link to="/visitor">Visitor</Link>
-      </div>
-      <Route path="/create" component={CreateOutfitForm} />
-      <Route path="/upload" component={UploadImageForm} />
-      <Route path="/create-account" component={CreateAccountForm} />
+        <Route path="/create" component={CreateOutfitForm} />
+        <Route path="/upload" component={UploadImageForm} />
+        <Route path="/create-account" component={CreateAccountForm} />
       <Route path="/login" component={LoginForm} />
-      <Route path="/visitor" component={Visitor} />
-    </BrowserRouter>
-  );
-}
+      <Route path="/visitor" component={Visitor} /> */}
+
 
 export default App;
 

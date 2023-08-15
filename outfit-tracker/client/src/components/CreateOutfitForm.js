@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createOutfit } from '../actions/outfitActions'; // Create this action
+// import React, { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { createOutfit } from '../actions/outfitActions'; // Create this action
 
-function CreateOutfitForm() {
-  const [outfitName, setOutfitName] = useState('');
-  const dispatch = useDispatch();
+// function CreateOutfitForm() {
+//   const [outfitName, setOutfitName] = useState('');
+//   const dispatch = useDispatch();
 
-  const handleCreateOutfit = () => {
-    if (outfitName.trim() !== '') {
-      dispatch(createOutfit(outfitName));
-      setOutfitName('');
-    }
-  };
+//   const handleCreateOutfit = () => {
+//     if (outfitName.trim() !== '') {
+//       dispatch(createOutfit(outfitName));
+//       setOutfitName('');
+//     }
+//   };
 
-  return (
-    <div>
-      <h2>Create New Outfit</h2>
-      <input
-        type="text"
-        placeholder="Outfit Name"
-        value={outfitName}
-        onChange={e => setOutfitName(e.target.value)}
-      />
-      <button onClick={handleCreateOutfit}>Create</button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h2>Create New Outfit</h2>
+//       <input
+//         type="text"
+//         placeholder="Outfit Name"
+//         value={outfitName}
+//         onChange={e => setOutfitName(e.target.value)}
+//       />
+//       <button onClick={handleCreateOutfit}>Create</button>
+//     </div>
+//   );
+// }
 
-export default CreateOutfitForm;
+// export default CreateOutfitForm;

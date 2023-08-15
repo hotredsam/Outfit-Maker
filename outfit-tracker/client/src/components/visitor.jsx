@@ -4,9 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import videoBg from '../assets/clothing.mp4'
+import Button from 'react-bootstrap/Button';
 
 
-export default function Visitor() {
+// export default 
+function Visitor() {
     return (
         <div>
             <Navbar bg="light" data-bs-theme="light">
@@ -23,7 +25,10 @@ export default function Visitor() {
             <div className="content">
                 <h1>Outfit Tracker</h1>
                 <p>Outfit planning made easy!</p>
+                <Button variant="primary" href="#createAccount">Get Started</Button>
             </div>
         </div>
     )
 }
+
+export default Visitor; 
