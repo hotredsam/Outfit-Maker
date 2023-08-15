@@ -14,6 +14,16 @@ const DashboardPage = () => {
         'https://picsum.photos/200',
         'https://picsum.photos/200',
         'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
+        'https://picsum.photos/200',
         'https://picsum.photos/200'
     ].map(s => ({
         top: s,
