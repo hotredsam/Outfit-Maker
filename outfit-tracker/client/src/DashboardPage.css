@@ -1,0 +1,168 @@
+.navbar {
+    background-color: #FFC0CB;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-button {
+    background-color: white;
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
+    padding: 10px 15px;
+    /* Increased padding */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-right: 5px;
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.nav-button:last-child {
+    margin-right: 0;
+}
+
+.nav-button:hover {
+    background-color: #FFC0CB;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow on hover */
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.side-button {
+    background-color: white;
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
+    padding: 10px;
+    /* Increased padding */
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+.side-button:hover {
+    background-color: #FFC0CB;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow on hover */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: white;
+}
+
+.footer {
+    background-color: #FFC0CB;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.dashboard-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.navbar {
+    background-color: #FFC0CB;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* Separate content into left and right */
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 5px;
+    /* Spacing between buttons */
+}
+
+.nav-button {
+    background-color: white;
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: #FFC0CB;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.account-button {
+    background-color: white;
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+.account-button:hover {
+    background-color: #FFC0CB;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Rest of the CSS remains the same */
+
+.navbar {
+    background-color: #FFC0CB;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-section {
+    display: flex;
+    /* Grouping logo and buttons */
+    align-items: center;
+    /* Vertical alignment */
+}
+
+
+.nav-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-button {
+    background-color: white;
+    color: #FFC0CB;
+    border: 1px solid #FFC0CB;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+/* Rest of the CSS remains the same */
+

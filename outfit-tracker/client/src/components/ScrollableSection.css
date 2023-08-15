@@ -1,0 +1,38 @@
+.scrollable-section-container {
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.scrollable-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.scrollable-section img {
+    height: 200px;
+    width: 200px;
+}
+
+/* Style the scrollbar with round corners */
+.scrollable-section::-webkit-scrollbar {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.scrollable-section::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.section-column {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 12px;
+}
