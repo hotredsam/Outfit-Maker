@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/Dashboard";
@@ -6,6 +7,14 @@ import CreateAccountForm from "./pages/CreateAccount";
 import ViewOutfits from "./components/ViewOutfits";
 
 import ViewItems from './components/viewItems';
+=======
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
+import Navbar from './components/Navbar';
+import CreateAccountForm from './pages/CreateAccount';
+import AddClothingItem from './components/UploadImage';
+>>>>>>> 52a3a5f (added backend and upload image page)
 
 const App = () => {
   return (
@@ -13,8 +22,13 @@ const App = () => {
       <Navbar>
         <Routes>
           <Route path="/dashboard" element={<DashboardPage />} />
+<<<<<<< HEAD
           <Route path="/upload" element={<DashboardPage />} />
           <Route path="/viewitems" element={<ViewItems />} />
+=======
+          <Route path="/upload" element={<AddClothingItem />} />
+          <Route path="/viewitems" element={<DashboardPage />} />
+>>>>>>> 52a3a5f (added backend and upload image page)
           <Route path="/createoutfits" element={<DashboardPage />} />
           <Route path="/viewoutfits" element={<ViewOutfits />} />
           <Route path="/createaccount" element={<CreateAccountForm />} />
