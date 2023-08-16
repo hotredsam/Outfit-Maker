@@ -39,7 +39,6 @@ app.get("/clothing/:id", async (req,res) => {
 
 // CREATE CLOTHING ITEM 
 app.post("/clothing", async (req, res) => {
-    //const { user_email, photo, title, category, color } = req.body
     try {
       const newClothingItem = await db.query(
         "INSERT INTO clothing (user_email, photo, title, category, color) values ($1, $2, $3, $4, $5);",
@@ -53,8 +52,6 @@ app.post("/clothing", async (req, res) => {
 
 // EDIT CLOTHING ITEM 
 app.put("/clothing/:id", async (req, res) => {
-    // const { id } = req.params
-    // const { user_email, photo, title, category, color } = req.body
     try {
       const editClothingItem = await db.query(
         "UPDATE clothing SET user_email = $1, photo = $2, title = $3, category = $4, color = $5  WHERE clothing_id = $6;",
@@ -68,9 +65,8 @@ app.put("/clothing/:id", async (req, res) => {
 
 // DELETE CLOTHING ITEM
 app.delete("/clothing/:id", async (req, res) => {
-    const { id } = req.params
     try {
-      const deleteClothingItem = db.query("DELETE FROM clothing WHERE clothing_id = $1;", [id]);
+      const deleteClothingItem = db.query("DELETE FROM clothing WHERE clothing_id = $1;", [req.params.id]);
       res.json(deleteClothingItem)
     } catch (err) {
       console.log(err);
@@ -99,6 +95,69 @@ app.delete("/clothing/:id", async (req, res) => {
 //   }
 // })
 
+// GET ALL OUTFITS
+// app.get("/outfits/:userEmail", async (req, res) =>{
+//   console.log(req)
+//   const { userEmail } = req.params
+//     try{
+//         const outfits = await db.query("SELECT * FROM outfits WHERE user_email = $1;", [userEmail])
+//         res.json(outfits.rows)
+//     } catch (err) {
+//         console.log(err)
+//     }
+// })
+
+// GET ONE OUTFIT
+app.get("/outfits/:id", async (req,res) => {
+  try{
+      const outfit = await db.query("SELECT * FROM outfits WHERE outfits_id = $1;", [req.params.id])
+      res.status(200).json({
+        status: "success",
+        data: {
+          outfits: outfit.rows[0],
+        },
+      });
+  } catch (err) {
+      console.log(err)
+  }
+})
+
+// CREATE AN OUTFIT 
+app.post("/outfits", async (req, res) => {
+  try {
+    const newOutfit = await db.query(
+      "INSERT INTO outfits (user_email, title, tops, bottoms, shoes, notes) values ($1, $2, $3, $4, $5, $6);",
+      [req.body.user_email, req.body.title, req.body.tops, req.body.bottoms, req.body.shoes, req.body.notes]
+    );
+    res.json(newOutfit)
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// EDIT AN OUTFIT
+app.put("/outfits/:id", async (req, res) => {
+  try {
+    const editOutfit = await db.query(
+      "UPDATE outfits SET user_email = $1, title = $2, tops = $3, bottoms = $4, shoes = $5, notes = $6  WHERE outfits_id = $7;",
+      [req.body.user_email, req.body.title, req.body.tops, req.body.bottoms, req.body.shoes, req.body.notes, req.params.id]
+    );
+    res.json(editOutfit)
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// DELETE AN OUTFIT
+app.delete("/outfits/:id", async (req, res) => {
+  try {
+    const deleteOutfit = db.query("DELETE FROM outfits WHERE outfits_id = $1;", [req.params.id]);
+    res.json(deleteOutfit)
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on http://localhost:${process.env.PORT}`);
-  });
+});
