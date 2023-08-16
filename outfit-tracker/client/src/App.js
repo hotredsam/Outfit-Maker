@@ -6,11 +6,14 @@ import CreateAccountForm from './pages/CreateAccount';
 import AddClothingItem from './components/UploadImage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import UpdateClothingItem from './pages/UpdateItemPage';
+import OutfitDetailPage from './pages/OutfitDetailPage';
 import { ClothingContextProvider } from './context/ClothingItemsContext';
+import { OutfitsContextProvider } from './context/OutfitsContext';
 
 const App = () => {
   return (
     <ClothingContextProvider>
+    <OutfitsContextProvider>
         <Router>
         <Navbar>
             <Routes>
@@ -21,10 +24,12 @@ const App = () => {
             <Route path="/viewitems/:id/update" element={<UpdateClothingItem />} />
             <Route path="/createoutfits" element={<DashboardPage />} />
             <Route path="/viewoutfits" element={<DashboardPage />} />
+            <Route path="/viewoutfits/:id" element={<OutfitDetailPage />} />
             <Route path="/createaccount" element={<CreateAccountForm />} />
             </Routes>
         </Navbar>
         </Router>
+    </OutfitsContextProvider>
     </ClothingContextProvider>
   );
 };
