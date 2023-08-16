@@ -4,8 +4,8 @@ import './UploadImage.css';
 import { useNavigate } from "react-router-dom";
 
 const AddClothingItem = () => {
-    const mode = 'create'
-    const editMode = mode === 'edit' ? true : false
+    // const mode = 'create'
+    // const editMode = mode === 'edit' ? true : false
     let navigate = useNavigate();
 
     const [user_email, setEmail] = useState("natalie@test.com");
@@ -71,7 +71,7 @@ const AddClothingItem = () => {
     <div className="overlay">
         <div className="modal">
             <div className="form-title-container">
-                <h3>Let's {mode} a clothing item!</h3>
+                <h3>Let's create a clothing item!</h3>
                 
                     <button onClick={handleClose}>X</button>
             </div>
@@ -112,9 +112,9 @@ const AddClothingItem = () => {
                     className="custom-select my-1 mr-sm-2"
                     >
                     <option disabled>Category</option>
-                    <option value="1">Tops</option>
-                    <option value="2">Bottoms</option>
-                    <option value="3">Shoes</option>
+                    <option value="Tops">Tops</option>
+                    <option value="Bottoms">Bottoms</option>
+                    <option value="Shoes">Shoes</option>
                     </select>
                 </div>
                     <button onClick={handleSubmit} type="submit" className="btn btn-primary">

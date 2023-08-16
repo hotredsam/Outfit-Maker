@@ -14,27 +14,32 @@ import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
 import Navbar from './components/Navbar';
 import CreateAccountForm from './pages/CreateAccount';
 import AddClothingItem from './components/UploadImage';
+import ItemDetailPage from './pages/ItemDetailPage';
+import { ClothingContextProvider } from './context/ClothingItemsContext';
 >>>>>>> 52a3a5f (added backend and upload image page)
 
 const App = () => {
   return (
-    <Router>
-      <Navbar>
-        <Routes>
-          <Route path="/dashboard" element={<DashboardPage />} />
+    <ClothingContextProvider>
+        <Router>
+        <Navbar>
+            <Routes>
+            <Route path="/dashboard" element={<DashboardPage />} />
 <<<<<<< HEAD
           <Route path="/upload" element={<DashboardPage />} />
           <Route path="/viewitems" element={<ViewItems />} />
 =======
-          <Route path="/upload" element={<AddClothingItem />} />
-          <Route path="/viewitems" element={<DashboardPage />} />
+            <Route path="/upload" element={<AddClothingItem />} />
+            <Route path="/viewitems" element={<DashboardPage />} />
 >>>>>>> 52a3a5f (added backend and upload image page)
-          <Route path="/createoutfits" element={<DashboardPage />} />
-          <Route path="/viewoutfits" element={<ViewOutfits />} />
-          <Route path="/createaccount" element={<CreateAccountForm />} />
-        </Routes>
-      </Navbar>
-    </Router>
+            <Route path="/viewitems/:id" element={<ItemDetailPage />} />
+            <Route path="/createoutfits" element={<DashboardPage />} />
+            <Route path="/viewoutfits" element={<ViewOutfits />} />
+            <Route path="/createaccount" element={<CreateAccountForm />} />
+            </Routes>
+        </Navbar>
+        </Router>
+    </ClothingContextProvider>
   );
 };
 export default App;
