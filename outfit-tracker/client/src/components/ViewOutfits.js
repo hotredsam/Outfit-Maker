@@ -1,14 +1,41 @@
 import React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-import CreateOutfitForm from './components/CreateOutfitForm';
-import UploadImageForm from './components/UploadImageForm';
-import CreateAccountForm from './components/CreateAccountForm';
-import LoginForm from './components/LoginForm';
-import ViewOutfits from './components/ViewOutfits'; // Ensure you import the correct path
+import { useDispatch, useSelector } from 'react-redux';
+import { scrollUp, scrollDown } from './ScrollableSection';
 
-function App() {
+// import CreateOutfitForm from './CreateOutfitForm';
+// import UploadImageForm from './UploadImage';
+// import CreateAccountForm from './CreateAccountForm';
+// import LoginForm from './LoginForm';
+// import viewoutfits from './ViewOutfits'; // Ensure you import the correct path
+
+
+const ViewOutfits = () => {
+    // const viewoutfits = () => {
+  const dispatch = useDispatch();
+  const scrollPosition = useSelector(state => state.scrollPosition);
+
+  const handleScroll = direction => {
+    if (direction === 'up') {
+      dispatch(scrollUp());
+    } else if (direction === 'down') {
+      dispatch(scrollDown());
+    }
+  };
   return (
-    <BrowserRouter>
+    <>
+            <div style={{ height: '1000px', overflowY: 'scroll' }}>
+        <button onClick={() => handleScroll('up')}>Scroll Up</button>
+        <button onClick={() => handleScroll('down')}>Scroll Down</button>
+        <div style={{ paddingTop: scrollPosition }}>Content</div>
+      </div>
+    </>
+    
+  );
+}
+
+export default ViewOutfits;
+
+    {/* <BrowserRouter>
       <div>
         <h1>Your App Title</h1>
         <Link to="/create">Create New Outfit</Link>
@@ -23,8 +50,7 @@ function App() {
         <Route path="/login" component={LoginForm} />
         <Route path="/view-outfits" component={ViewOutfits} />
       </div>
-    </BrowserRouter>
-  );
-}
+    </BrowserRouter> */}
 
-export default App;
+
+// export default App;
