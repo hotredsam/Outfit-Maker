@@ -42,11 +42,11 @@ app.get("/clothing/:userEmail", async (req, res) =>{
 
 // CREATE CLOTHING ITEM 
 app.post("/clothing", async (req, res) => {
-    const { user_email, photo, title, category, color } = req.body
+    //const { user_email, photo, title, category, color } = req.body
     try {
       const newClothingItem = await db.query(
         "INSERT INTO clothing (user_email, photo, title, category, color) values ($1, $2, $3, $4, $5);",
-        [user_email, photo, title, category, color]
+        [req.body.user_email, req.body.photo, req.body.title, req.body.category, req.body.color]
       );
       res.json(newClothingItem)
     } catch (err) {
@@ -56,12 +56,12 @@ app.post("/clothing", async (req, res) => {
 
 // EDIT CLOTHING ITEM 
 app.put("/clothing/:id", async (req, res) => {
-    const { id } = req.params
-    const { user_email, photo, title, category, color } = req.body
+    // const { id } = req.params
+    // const { user_email, photo, title, category, color } = req.body
     try {
       const editClothingItem = await db.query(
-        "UPDATE clothing SET user_email = $1, photo = $2, title = $3, category = $4, color = $5  WHERE id = $6;",
-        [user_email, photo, title, category, color, id]
+        "UPDATE clothing SET user_email = $1, photo = $2, title = $3, category = $4, color = $5  WHERE clothing_id = $6;",
+        [req.body.user_email, req.body.photo, req.body.title, req.body.category, req.body.color, req.params.id]
       );
       res.json(editClothingItem)
     } catch (err) {
@@ -73,7 +73,7 @@ app.put("/clothing/:id", async (req, res) => {
 app.delete("/clothing/:id", async (req, res) => {
     const { id } = req.params
     try {
-      const deleteClothingItem = db.query("DELETE FROM clothing WHERE id = $1;", [id]);
+      const deleteClothingItem = db.query("DELETE FROM clothing WHERE clothing_id = $1;", [id]);
       res.json(deleteClothingItem)
     } catch (err) {
       console.log(err);
