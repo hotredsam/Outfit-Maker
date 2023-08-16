@@ -15,6 +15,7 @@ import Navbar from './components/Navbar';
 import CreateAccountForm from './pages/CreateAccount';
 import AddClothingItem from './components/UploadImage';
 import ItemDetailPage from './pages/ItemDetailPage';
+import UpdateClothingItem from './pages/UpdateItemPage';
 import { ClothingContextProvider } from './context/ClothingItemsContext';
 >>>>>>> 52a3a5f (added backend and upload image page)
 
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="/viewitems" element={<DashboardPage />} />
 >>>>>>> 52a3a5f (added backend and upload image page)
             <Route path="/viewitems/:id" element={<ItemDetailPage />} />
+            <Route path="/viewitems/:id/update" element={<UpdateClothingItem />} />
             <Route path="/createoutfits" element={<DashboardPage />} />
             <Route path="/viewoutfits" element={<ViewOutfits />} />
             <Route path="/createaccount" element={<CreateAccountForm />} />
