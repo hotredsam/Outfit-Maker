@@ -27,7 +27,7 @@ const Navbar = ({ children }) => {
 
         </div>
         <div className="right-section">
-          <Link to="/createaccount">
+          <Link to="/account">
             <button className="account-button">Account</button>
           </Link>
         </div>
