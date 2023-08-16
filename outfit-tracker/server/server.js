@@ -11,34 +11,31 @@ app.use(cors())
 app.use(express.json())
 
 // GET ALL CLOTHING
-app.get("/clothing/:userEmail", async (req, res) =>{
-  console.log(req)
-  const { userEmail } = req.params
-    try{
-        const clothing = await db.query("SELECT * FROM clothing WHERE user_email = $1;", [userEmail])
-        res.json(clothing.rows)
-    } catch (err) {
-        console.log(err)
-    }
-})
-
-// GET CLOTHING ITEM
-// app.get("/clothing/:id", async (req,res) => {
+// app.get("/clothing/:userEmail", async (req, res) =>{
+//   console.log(req)
+//   const { userEmail } = req.params
 //     try{
-//         const results = await db.query("select * from test where id = $1;", [req.params.id])
-//         //const results = await db.query("select * from clothing where id = $1", [req.params.id])
-        
-//         res.status(200).json({
-//             status: "complete",
-//             data: {
-//                 test: results.rows[0]
-//                 //clothing: results.row[0]
-//             }
-//         })
+//         const clothing = await db.query("SELECT * FROM clothing WHERE user_email = $1;", [userEmail])
+//         res.json(clothing.rows)
 //     } catch (err) {
 //         console.log(err)
 //     }
 // })
+
+// GET CLOTHING ITEM
+app.get("/clothing/:id", async (req,res) => {
+    try{
+        const clothingItem = await db.query("SELECT * FROM clothing WHERE clothing_id = $1;", [req.params.id])
+        res.status(200).json({
+          status: "success",
+          data: {
+            clothing: clothingItem.rows[0],
+          },
+        });
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 // CREATE CLOTHING ITEM 
 app.post("/clothing", async (req, res) => {
