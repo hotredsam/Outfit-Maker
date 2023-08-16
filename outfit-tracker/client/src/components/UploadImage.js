@@ -1,59 +1,87 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import ClothingFetch from "../apis/ClothingFetch";
 import './UploadImage.css';
-
+import { useNavigate } from "react-router-dom";
 
 const AddClothingItem = () => {
     const mode = 'create'
     const editMode = mode === 'edit' ? true : false
+    let navigate = useNavigate();
 
-    const [data, setData] = useState({
-        user_email: null,
-        photo: null,
-        title: null,
-        category: null,
-        color: null
-    })
+    const [user_email, setEmail] = useState("natalie@test.com");
+    const [photo, setPhoto] = useState("");
+    const [title, setTitle] = useState("");
+    const [color, setColor] = useState("");
+    const [category, setCategory] = useState("Category");
 
-    const postData = async () => {
-        try{
-            const response = await fetch('http://localhost:3000/clothing', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(data)
-            })
-            console.log(response)
-        } catch(err) {
-            console.error(err)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+        const response = await ClothingFetch.post("/", {
+            user_email,
+            photo,
+            title,
+            color,
+            category
+        });
+        console.log(response);
+        navigate(`/dashboard`);
+        } catch (err) {
+        console.log(err);
         }
-    }
+    };
 
-    const handleChange = (e) => {
-        console.log('changing', e)
-        const { name, value } = e.target
+    const handleClose = (e) => {
+        e.stopPropagation();
+        navigate(`/dashboard`);
+      };
 
-        setData(data => ({
-            ...data,
-            [name] : value
-        }))
-    }
+    // const [data, setData] = useState({
+    //     user_email: "natalie@test.com",
+    //     photo: "",
+    //     title: "",
+    //     category: "category",
+    //     color: ""
+    // })
+
+    // const postData = async () => {
+    //     try{
+    //         const response = await fetch('http://localhost:3001/clothing', {
+    //             method: 'POST',
+    //             headers: {'Content-Type': 'application/json'},
+    //             body: JSON.stringify(data)
+    //         })
+    //         console.log(response)
+    //     } catch(err) {
+    //         console.error(err)
+    //     }
+    // }
+
+    // const handleChange = (e) => {
+    //     console.log('changing', e)
+    //     const { name, value } = e.target
+
+    //     setData(data => ({
+    //         ...data,
+    //         [name] : value
+    //     }))
+    // }
 
   return (
     <div className="overlay">
         <div className="modal">
             <div className="form-title-container">
                 <h3>Let's {mode} a clothing item!</h3>
-                <Link to="/dashboard">
-                    <button>X</button>
-                </Link>
+                
+                    <button onClick={handleClose}>X</button>
             </div>
 
             <form>
                 <div className="form-row">
                 <div className="col">
                     <input
-                    value={data.title}
-                    onChange={handleChange}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     type="text"
                     className="form-control"
                     placeholder="Title"
@@ -61,8 +89,17 @@ const AddClothingItem = () => {
                 </div>
                 <div className="col">
                     <input
-                    value={data.color}
-                    onChange={handleChange}
+                    value={photo}
+                    onChange={(e) => setPhoto(e.target.value)}
+                    type="text"
+                    className="form-control"
+                    placeholder="Upload Photo"
+                    />
+                </div>
+                <div className="col">
+                    <input
+                    value={color}
+                    onChange={(e) => setColor(e.target.value)}
                     className="form-control"
                     type="text"
                     placeholder="Color"
@@ -70,8 +107,8 @@ const AddClothingItem = () => {
                 </div>
                 <div className="col">
                     <select
-                    value={data.category}
-                    onChange={handleChange}
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
                     className="custom-select my-1 mr-sm-2"
                     >
                     <option disabled>Category</option>
@@ -80,13 +117,9 @@ const AddClothingItem = () => {
                     <option value="3">Shoes</option>
                     </select>
                 </div>
-                <button
-                    onClick={editMode ? '' : postData}
-                    type="submit"
-                    className="btn btn-primary"
-                >
-                    Save
-                </button>
+                    <button onClick={handleSubmit} type="submit" className="btn btn-primary">
+                        Save
+                    </button>
                 </div>
             </form>
         </div>
