@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import CreateAccountForm from './pages/CreateAccount';
 import AddClothingItem from './components/UploadImage';
 import ItemDetailPage from './pages/ItemDetailPage';
+import UpdateClothingItem from './pages/UpdateItemPage';
 import { ClothingContextProvider } from './context/ClothingItemsContext';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/upload" element={<AddClothingItem />} />
             <Route path="/viewitems" element={<DashboardPage />} />
             <Route path="/viewitems/:id" element={<ItemDetailPage />} />
+            <Route path="/viewitems/:id/update" element={<UpdateClothingItem />} />
             <Route path="/createoutfits" element={<DashboardPage />} />
             <Route path="/viewoutfits" element={<DashboardPage />} />
             <Route path="/createaccount" element={<CreateAccountForm />} />

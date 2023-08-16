@@ -32,7 +32,12 @@ const ItemDetailPage = () => {
         } catch (err) {
             console.log(err);
         }
-      };
+    };
+
+    const handleUpdate = (e, id) => {
+        e.stopPropagation();
+        navigate(`/viewitems/${id}/update`);
+    };
 
 
     return (
@@ -41,7 +46,7 @@ const ItemDetailPage = () => {
             <div>{selectedClothing.photo}</div>
             <div>{selectedClothing.color}</div>
             <div>{selectedClothing.category}</div>
-            <button>Edit</button>
+            <button onClick={(e) => handleUpdate(e, selectedClothing.clothing_id)}>Edit</button>
             <button onClick={(e) => handleDelete(e, selectedClothing.clothing_id)}>Delete</button>
         </div>
     )

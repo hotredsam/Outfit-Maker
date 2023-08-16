@@ -1,75 +1,53 @@
-import { useState } from 'react';
+import React, { useState, useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ClothingContext } from "../context/ClothingItemsContext";
 import ClothingFetch from "../apis/ClothingFetch";
-import './UploadImage.css';
-import { useNavigate } from "react-router-dom";
 
-const AddClothingItem = () => {
-    let navigate = useNavigate();
+const UpdateClothingItem = (props) => {
+   const { id } = useParams();
+   let navigate = useNavigate();
+  const { clothing } = useContext(ClothingContext);
+  const [user_email, setEmail] = useState("natalie@test.com");
+  const [title, setTitle] = useState("");
+  const [photo, setPhoto] = useState("");
+  const [color, setColor] = useState("");
+  const [category, setCategory] = useState("");
 
-    const [user_email, setEmail] = useState("natalie@test.com");
-    const [photo, setPhoto] = useState("");
-    const [title, setTitle] = useState("");
-    const [color, setColor] = useState("");
-    const [category, setCategory] = useState("Category");
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-        const response = await ClothingFetch.post("/", {
-            user_email,
-            photo,
-            title,
-            color,
-            category
-        });
-        console.log(response);
-        navigate(`/dashboard`);
-        } catch (err) {
-        console.log(err);
-        }
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await ClothingFetch.get(`/${id}`);
+      console.log(response.data.data);
+      setTitle(response.data.data.clothing.title);
+      setPhoto(response.data.data.clothing.photo);
+      setColor(response.data.data.clothing.color);
+      setCategory(response.data.data.clothing.category);
     };
 
-    const handleClose = (e) => {
-        e.stopPropagation();
-        navigate(`/dashboard`);
-      };
+    fetchData();
+  }, []);
 
-    // const [data, setData] = useState({
-    //     user_email: "natalie@test.com",
-    //     photo: "",
-    //     title: "",
-    //     category: "category",
-    //     color: ""
-    // })
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const updatedClothingItem = await ClothingFetch.put(`/${id}`, {
+      user_email,
+      title,
+      photo,
+      color,
+      category
+    });
+    navigate("/viewitems");
+  };
 
-    // const postData = async () => {
-    //     try{
-    //         const response = await fetch('http://localhost:3001/clothing', {
-    //             method: 'POST',
-    //             headers: {'Content-Type': 'application/json'},
-    //             body: JSON.stringify(data)
-    //         })
-    //         console.log(response)
-    //     } catch(err) {
-    //         console.error(err)
-    //     }
-    // }
-
-    // const handleChange = (e) => {
-    //     console.log('changing', e)
-    //     const { name, value } = e.target
-
-    //     setData(data => ({
-    //         ...data,
-    //         [name] : value
-    //     }))
-    // }
+  const handleClose = (e) => {
+    e.stopPropagation();
+    navigate(`/dashboard`);
+  };
 
   return (
     <div className="overlay">
         <div className="modal">
             <div className="form-title-container">
-                <h3>Let's create a clothing item!</h3>
+                <h3>Let's update a clothing item!</h3>
                 
                     <button onClick={handleClose}>X</button>
             </div>
@@ -125,4 +103,4 @@ const AddClothingItem = () => {
   );
 };
 
-export default AddClothingItem;
+export default UpdateClothingItem;
