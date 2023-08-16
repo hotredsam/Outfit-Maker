@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createOutfit } from '../actions/outfitActions'; // Create this action
-import { createAccount } from '../components/accountActions'; // Adjust this path if necessary
+// import { createAccount } from '../components/accountActions'; // Adjust this path if necessary
 
 function CreateOutfitForm() {
   const [outfitName, setOutfitName] = useState('');
