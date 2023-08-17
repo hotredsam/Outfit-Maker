@@ -51,7 +51,7 @@ const ViewOutfits = () => {
 
   const handleUpdate = (e, id) => {
     e.stopPropagation();
-    navigate(`/viewitems/${id}/update`);
+    navigate(`/viewoutfits/${id}/update`);
   };
 
   return (
@@ -66,7 +66,7 @@ const ViewOutfits = () => {
             <img src={outfit.shoes} alt={outfit.title} height='200px' width='200px' />
             <h3>Notes:</h3>
             <div>{outfit.notes}</div>
-            <button>Edit</button>
+            <button onClick={(e) => handleUpdate(e, outfit.outfits_id)}>Edit</button>
             <button onClick={(e) => handleDelete(e, outfit.outfits_id)}>Delete</button>
           </div>
         ))}

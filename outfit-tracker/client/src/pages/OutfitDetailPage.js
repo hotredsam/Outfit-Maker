@@ -28,7 +28,7 @@ const OutfitDetailPage = () => {
         try {
             const response = await OutfitsFetch.delete(`/${id}`);
             console.log(response);
-            navigate(`/dashboard`);
+            navigate(`/`);
         } catch (err) {
             console.log(err);
         }

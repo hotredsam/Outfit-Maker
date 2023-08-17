@@ -40,9 +40,9 @@ const ViewItems = () => {
         marginLeft: '1%', // Adjust the left margin as needed
     };
 
-    const { tops, setTops } = useContext(ClothingContext);
-    const { bottoms, setBottoms } = useContext(ClothingContext);
-    const { shoes, setShoes } = useContext(ClothingContext);
+    const { topsC, setTopsC } = useContext(ClothingContext);
+    const { bottomsC, setBottomsC } = useContext(ClothingContext);
+    const { shoesC, setShoesC } = useContext(ClothingContext);
 
     let navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const ViewItems = () => {
           try {
             const response = await ClothingFetch.get("/tops");
             console.log(response);
-            setTops(response.data.data.clothing);
+            setTopsC(response.data.data.clothing);
           } catch (err) {}
         };
         
@@ -64,7 +64,7 @@ const ViewItems = () => {
           try {
             const response = await ClothingFetch.get("/bottoms");
             //console.log(response);
-            setBottoms(response.data.data.clothing);
+            setBottomsC(response.data.data.clothing);
           } catch (err) {}
         };
     
@@ -77,7 +77,7 @@ const ViewItems = () => {
           try {
             const response = await ClothingFetch.get("/shoes");
             //console.log(response);
-            setShoes(response.data.data.clothing);
+            setShoesC(response.data.data.clothing);
           } catch (err) {}
         };
     
@@ -95,7 +95,7 @@ const ViewItems = () => {
             <h2>Tops</h2>
             <div className="scrollable-section" style={containerStyle}>
                 <div style={rowStyle} className="row">
-                    {tops && tops.map((top) => (
+                    {topsC && topsC.map((top) => (
                         <div className="section-column" onClick={() => handleClothingSelect(top.clothing_id)}
                         key={top.clothing_id}>
                             <img src={top.photo} alt={top.title} />
@@ -106,7 +106,7 @@ const ViewItems = () => {
             <h2>Bottoms</h2>
             <div className="scrollable-section" style={containerStyle}>
                 <div style={rowStyle} className="row">
-                    {bottoms && bottoms.map((bottom) => (
+                    {bottomsC && bottomsC.map((bottom) => (
                         <div className="section-column" onClick={() => handleClothingSelect(bottom.clothing_id)}
                         key={bottom.clothing_id}>
                             <img src={bottom.photo} alt={bottom.title} />
@@ -117,7 +117,7 @@ const ViewItems = () => {
             <h2>Shoes</h2>
             <div className="scrollable-section" style={containerStyle}>
                 <div style={rowStyle} className="row">
-                    {shoes && shoes.map((shoe) => (
+                    {shoesC && shoesC.map((shoe) => (
                         <div className="section-column" onClick={() => handleClothingSelect(shoe.clothing_id)}
                         key={shoe.clothing_id}>
                             <img src={shoe.photo} alt={shoe.title} />

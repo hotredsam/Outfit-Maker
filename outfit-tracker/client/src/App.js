@@ -14,6 +14,7 @@ import Visitor from './components/visitor';
 import ViewOutfits from './components/ViewOutfits';
 import ViewItems from './components/viewItems';
 import CreateOutfit from './pages/CreateOutfit';
+import UpdateOutfit from './pages/UpdateOutfitPage';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/createoutfits" element={<CreateOutfit />} />
             <Route path="/viewoutfits" element={<ViewOutfits />} />
             <Route path="/viewoutfits/:id" element={<OutfitDetailPage />} />
+            <Route path="/viewoutfits/:id/update" element={<UpdateOutfit />} />
             <Route path="/createaccount" element={<CreateAccountForm />} />
             </Routes>
         </Navbar>
