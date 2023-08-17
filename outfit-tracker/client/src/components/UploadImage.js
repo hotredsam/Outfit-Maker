@@ -24,7 +24,7 @@ const AddClothingItem = () => {
             category
         });
         console.log(response);
-        navigate(`/dashboard`);
+        navigate(`/viewitems`);
         } catch (err) {
         console.log(err);
         }
@@ -32,7 +32,7 @@ const AddClothingItem = () => {
 
     const handleClose = (e) => {
         e.stopPropagation();
-        navigate(`/dashboard`);
+        navigate(`/`);
       };
 
   return (

@@ -11,16 +11,68 @@ app.use(cors())
 app.use(express.json())
 
 // GET ALL CLOTHING
-// app.get("/clothing/:userEmail", async (req, res) =>{
-//   console.log(req)
-//   const { userEmail } = req.params
-//     try{
-//         const clothing = await db.query("SELECT * FROM clothing WHERE user_email = $1;", [userEmail])
-//         res.json(clothing.rows)
-//     } catch (err) {
-//         console.log(err)
-//     }
-// })
+app.get("/clothing", async (req, res) =>{
+    try{
+        const clothing = await db.query("SELECT * FROM clothing")
+        res.status(200).json({
+            status: "complete",
+            results: clothing.rows.length,
+            data: {
+                clothing: clothing.rows
+            }
+        })
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+// GET ALL TOPS
+app.get("/clothing/tops", async (req, res) =>{
+  try{
+      const clothing = await db.query("SELECT * FROM clothing WHERE category = 'Tops';")
+      res.status(200).json({
+          status: "complete",
+          results: clothing.rows.length,
+          data: {
+              clothing: clothing.rows
+          }
+      })
+  } catch (err) {
+      console.log(err)
+  }
+})
+
+// GET ALL BOTTOMS
+app.get("/clothing/bottoms", async (req, res) =>{
+  try{
+      const clothing = await db.query("SELECT * FROM clothing WHERE category = 'Bottoms';")
+      res.status(200).json({
+          status: "complete",
+          results: clothing.rows.length,
+          data: {
+              clothing: clothing.rows
+          }
+      })
+  } catch (err) {
+      console.log(err)
+  }
+})
+
+// GET ALL SHOES
+app.get("/clothing/shoes", async (req, res) =>{
+  try{
+      const clothing = await db.query("SELECT * FROM clothing WHERE category = 'Shoes';")
+      res.status(200).json({
+          status: "complete",
+          results: clothing.rows.length,
+          data: {
+              clothing: clothing.rows
+          }
+      })
+  } catch (err) {
+      console.log(err)
+  }
+})
 
 // GET CLOTHING ITEM
 app.get("/clothing/:id", async (req,res) => {
@@ -95,17 +147,15 @@ app.delete("/clothing/:id", async (req, res) => {
 //   }
 // })
 
-// GET ALL OUTFITS
-// app.get("/outfits/:userEmail", async (req, res) =>{
-//   console.log(req)
-//   const { userEmail } = req.params
-//     try{
-//         const outfits = await db.query("SELECT * FROM outfits WHERE user_email = $1;", [userEmail])
-//         res.json(outfits.rows)
-//     } catch (err) {
-//         console.log(err)
-//     }
-// })
+//GET ALL OUTFITS
+app.get("/outfits", async (req, res) =>{
+    try{
+        const outfits = await db.query("SELECT * FROM outfits;")
+        res.json(outfits.rows)
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 // GET ONE OUTFIT
 app.get("/outfits/:id", async (req,res) => {

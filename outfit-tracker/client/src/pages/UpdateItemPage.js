@@ -35,12 +35,12 @@ const UpdateClothingItem = (props) => {
       color,
       category
     });
-    navigate("/viewitems");
+    navigate("/viewitems/${id}");
   };
 
   const handleClose = (e) => {
     e.stopPropagation();
-    navigate(`/dashboard`);
+    navigate(`/`);
   };
 
   return (

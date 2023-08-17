@@ -15,6 +15,7 @@ const ItemDetailPage = () => {
             const response = await ClothingFetch.get(`/${id}`);
             console.log(response);
             setSelectedClothing(response.data.data.clothing);
+            //console.log(selectedClothing)
           } catch (err) {
             console.log(err);
           }

@@ -13,7 +13,7 @@ import { OutfitsContextProvider } from './context/OutfitsContext';
 import Visitor from './components/visitor';
 import ViewOutfits from './components/ViewOutfits';
 import ViewItems from './components/viewItems';
-import CreateOutfitForm from './components/CreateOutfitForm';
+import CreateOutfit from './pages/CreateOutfit';
 
 const App = () => {
   return (
@@ -28,7 +28,7 @@ const App = () => {
             <Route path="/viewitems" element={<ViewItems />} />
             <Route path="/viewitems/:id" element={<ItemDetailPage />} />
             <Route path="/viewitems/:id/update" element={<UpdateClothingItem />} />
-            <Route path="/createoutfits" element={<CreateOutfitForm />} />
+            <Route path="/createoutfits" element={<CreateOutfit />} />
             <Route path="/viewoutfits" element={<ViewOutfits />} />
             <Route path="/viewoutfits/:id" element={<OutfitDetailPage />} />
             <Route path="/createaccount" element={<CreateAccountForm />} />
