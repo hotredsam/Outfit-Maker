@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ClothingFetch from "../apis/ClothingFetch";
 import './UploadImage.css';
+import FileBase64 from 'react-file-base64';
 import { useNavigate } from "react-router-dom";
 
 const AddClothingItem = () => {
@@ -34,37 +35,6 @@ const AddClothingItem = () => {
         navigate(`/dashboard`);
       };
 
-    // const [data, setData] = useState({
-    //     user_email: "natalie@test.com",
-    //     photo: "",
-    //     title: "",
-    //     category: "category",
-    //     color: ""
-    // })
-
-    // const postData = async () => {
-    //     try{
-    //         const response = await fetch('http://localhost:3001/clothing', {
-    //             method: 'POST',
-    //             headers: {'Content-Type': 'application/json'},
-    //             body: JSON.stringify(data)
-    //         })
-    //         console.log(response)
-    //     } catch(err) {
-    //         console.error(err)
-    //     }
-    // }
-
-    // const handleChange = (e) => {
-    //     console.log('changing', e)
-    //     const { name, value } = e.target
-
-    //     setData(data => ({
-    //         ...data,
-    //         [name] : value
-    //     }))
-    // }
-
   return (
     <div className="overlay">
         <div className="modal">
@@ -85,15 +55,11 @@ const AddClothingItem = () => {
                     placeholder="Title"
                     />
                 </div>
-                <div className="col">
-                    <input
-                    value={photo}
-                    onChange={(e) => setPhoto(e.target.value)}
-                    type="text"
-                    className="form-control"
-                    placeholder="Upload Photo"
-                    />
-                </div>
+                <FileBase64
+                    type="file"
+                    multiple={false}
+                    onDone={({ base64 }) => setPhoto({ base64 })}
+                />
                 <div className="col">
                     <input
                     value={color}

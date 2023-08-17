@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { uploadImage } from '../actions/outfitActions'; // Create this action
 
 function UploadImageForm() {
   const [imageFile, setImageFile] = useState(null);
@@ -18,7 +17,7 @@ function UploadImageForm() {
       formData.append('image', imageFile);
       formData.append('name', imageName);
 
-      dispatch(uploadImage(formData));
+      //dispatch(uploadImage(formData));
       setImageFile(null);
       setImageName('');
     }
