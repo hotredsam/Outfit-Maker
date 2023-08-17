@@ -3,6 +3,8 @@ import './viewItems.css';
 import './ScrollableSection.css';
 import ScrollableSection from './ScrollableSection';
 
+
+//test
 const ViewItems = () => {
     const images = [
         'https://picsum.photos/200',
