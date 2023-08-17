@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ClothingContext } from "../context/ClothingItemsContext";
 import ClothingFetch from "../apis/ClothingFetch";
 import { useNavigate } from "react-router-dom";
+import './ItemDetailPage.css';
 
 const ItemDetailPage = () => {
     const { id } = useParams()
@@ -29,7 +30,7 @@ const ItemDetailPage = () => {
         try {
             const response = await ClothingFetch.delete(`/${id}`);
             console.log(response);
-            navigate(`/dashboard`);
+            navigate(`/viewitems`);
         } catch (err) {
             console.log(err);
         }
@@ -43,10 +44,12 @@ const ItemDetailPage = () => {
 
     return (
         <div>
-            <div>{selectedClothing.title}</div>
+            <h1>{selectedClothing.title}</h1>
             {/* <div>{selectedClothing.photo}</div> */}
             <img src={selectedClothing.photo} alt='Photo Not Working' height="100px"/>
+            <h2>Color:</h2>
             <div>{selectedClothing.color}</div>
+            <h2>Category:</h2>
             <div>{selectedClothing.category}</div>
             <button onClick={(e) => handleUpdate(e, selectedClothing.clothing_id)}>Edit</button>
             <button onClick={(e) => handleDelete(e, selectedClothing.clothing_id)}>Delete</button>

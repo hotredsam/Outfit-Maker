@@ -72,40 +72,40 @@ const UpdateOutfit = (props) => {
     }, []);
 
     const { id } = useParams();
-  const { outfits } = useContext(OutfitsContext);
-  const [user_email, setEmail] = useState("natalie@test.com");
-  const [title, setTitle] = useState("");
-  const [tops, setTops] = useState("");
-  const [bottoms, setBottoms] = useState("");
-  const [shoes, setShoes] = useState("");
-  const [notes, setNotes] = useState("");
+    const { outfits } = useContext(OutfitsContext);
+    const [user_email, setEmail] = useState("natalie@test.com");
+    const [title, setTitle] = useState("");
+    const [tops, setTops] = useState("");
+    const [bottoms, setBottoms] = useState("");
+    const [shoes, setShoes] = useState("");
+    const [notes, setNotes] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await OutfitsFetch.get(`/${id}`);
-      console.log(response.data.data);
-      setTitle(response.data.title);
-      setTops(response.data.tops);
-      setBottoms(response.data.bottoms);
-      setShoes(response.data.shoes);
-      setNotes(response.data.notes)
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await OutfitsFetch.get(`/${id}`);
+            console.log(response.data.data.outfits);
+            setTitle(response.data.data.outfits.title);
+            setTops(response.data.data.outfits.tops);
+            setBottoms(response.data.data.outfits.bottoms);
+            setShoes(response.data.data.outfits.shoes);
+            setNotes(response.data.data.outfits.notes)
+        };
+
+        fetchData();
+    }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const updatedOutfit = await OutfitsFetch.put(`/${id}`, {
+            user_email,
+            title,
+            tops,
+            bottoms,
+            shoes,
+            notes
+        });
+        navigate("/viewoutfits");
     };
-
-    fetchData();
-  }, []);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const updatedOutfit = await OutfitsFetch.put(`/${id}`, {
-      user_email,
-      title,
-      tops,
-      bottoms,
-      shoes,
-      notes
-    });
-    navigate("/viewoutfits");
-  };
 
 
     return (
