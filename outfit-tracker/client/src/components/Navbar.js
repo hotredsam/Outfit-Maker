@@ -1,4 +1,5 @@
 import Sidebar from './Sidebar';
+// import Visitor from './visitor';
 import './Navbar.css';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
@@ -27,8 +28,8 @@ const Navbar = ({ children }) => {
 
         </div>
         <div className="right-section">
-          <Link to="/account">
-            <button className="account-button">Account</button>
+          <Link to="/createaccount">
+            <button className="account-button">Create Account</button>
           </Link>
         </div>
 
@@ -36,6 +37,7 @@ const Navbar = ({ children }) => {
       <div className="app-content-container">
         <div className="app-sidebar-container">
           <Sidebar />
+          {/* <Visitor /> */}
         </div>
         <div className="app-content">
           {children}
