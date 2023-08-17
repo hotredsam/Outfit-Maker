@@ -21,7 +21,6 @@ const Dashboard = () => {
             <div className="scrollable-section-container">
                 <ScrollableSection images={images} />
             </div>
-
             {/* More main content elements here */}
 
         </div>

@@ -43,8 +43,8 @@ const ItemDetailPage = () => {
     return (
         <div>
             <div>{selectedClothing.title}</div>
-            <div>{selectedClothing.photo}</div>
-            <img src={selectedClothing.photo} alt={selectedClothing.title} />
+            {/* <div>{selectedClothing.photo}</div> */}
+            <img src={selectedClothing.photo} alt='Photo Not Working' height="100px"/>
             <div>{selectedClothing.color}</div>
             <div>{selectedClothing.category}</div>
             <button onClick={(e) => handleUpdate(e, selectedClothing.clothing_id)}>Edit</button>
