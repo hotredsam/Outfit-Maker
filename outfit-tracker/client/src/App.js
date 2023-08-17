@@ -8,6 +8,7 @@ import UploadImageForm from './components/UploadImageForm';
 import ItemDetailPage from './pages/ItemDetailPage';
 import UpdateClothingItem from './pages/UpdateItemPage';
 import OutfitDetailPage from './pages/OutfitDetailPage';
+import ViewOutfits from './components/ViewOutfits';
 import { ClothingContextProvider } from './context/ClothingItemsContext';
 import { OutfitsContextProvider } from './context/OutfitsContext';
 import Visitor from './components/visitor';
