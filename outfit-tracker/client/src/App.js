@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DashboardPage from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import CreateAccountForm from "./pages/CreateAccount";
 import ViewOutfits from "./components/ViewOutfits";
-=======
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
-import Navbar from './components/Navbar';
-import CreateAccountForm from './pages/CreateAccount';
+
 import ViewItems from './components/viewItems';
->>>>>>> 51b11fe (adding viewItems page, still working on it)
 
 const App = () => {
   return (
