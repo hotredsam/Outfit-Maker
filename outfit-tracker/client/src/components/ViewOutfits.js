@@ -2,13 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { scrollUp, scrollDown } from './ScrollableSection';
 
-// import CreateOutfitForm from './CreateOutfitForm';
-// import UploadImageForm from './UploadImage';
-// import CreateAccountForm from './CreateAccountForm';
-// import LoginForm from './LoginForm';
-// import viewoutfits from './ViewOutfits'; // Ensure you import the correct path
-
-
 const ViewOutfits = () => {
     // const viewoutfits = () => {
   const dispatch = useDispatch();
@@ -34,6 +27,13 @@ const ViewOutfits = () => {
 }
 
 export default ViewOutfits;
+
+
+// import CreateOutfitForm from './CreateOutfitForm';
+// import UploadImageForm from './UploadImage';
+// import CreateAccountForm from './CreateAccountForm';
+// import LoginForm from './LoginForm';
+// import viewoutfits from './ViewOutfits'; // Ensure you import the correct path
 
     {/* <BrowserRouter>
       <div>
