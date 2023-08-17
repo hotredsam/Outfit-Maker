@@ -151,7 +151,13 @@ app.delete("/clothing/:id", async (req, res) => {
 app.get("/outfits", async (req, res) =>{
     try{
         const outfits = await db.query("SELECT * FROM outfits;")
-        res.json(outfits.rows)
+        res.status(200).json({
+          status: "complete",
+          results: outfits.rows.length,
+          data: {
+              outfits: outfits.rows
+          }
+      })
     } catch (err) {
         console.log(err)
     }

@@ -3,7 +3,7 @@ import React, { useState, createContext } from "react";
 export const OutfitsContext = createContext();
 
 export const OutfitsContextProvider = (props) => {
-  const [outfits, setOutfits] = useState([]);
+  const [outfits, setOutfits] = useState("");
   const [selectedOutfit, setSelectedOutfit] = useState("");
 
   const addOutfit = (outfit) => {
