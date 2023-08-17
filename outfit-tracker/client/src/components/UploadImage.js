@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ClothingFetch from "../apis/ClothingFetch";
 import './UploadImage.css';
 import FileBase64 from 'react-file-base64';
@@ -55,11 +55,20 @@ const AddClothingItem = () => {
                     placeholder="Title"
                     />
                 </div>
-                <FileBase64
+                {/* <FileBase64
                     type="file"
                     multiple={false}
                     onDone={({ base64 }) => setPhoto({ base64 })}
-                />
+                /> */}
+                <div className="col">
+                    <input
+                    value={photo}
+                    onChange={(e) => setPhoto(e.target.value)}
+                    className="form-control"
+                    type="text"
+                    placeholder="Photo"
+                    />
+                </div>
                 <div className="col">
                     <input
                     value={color}
