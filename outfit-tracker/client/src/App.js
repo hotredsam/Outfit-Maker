@@ -4,6 +4,7 @@ import DashboardPage from './pages/Dashboard'; // Adjust the path if necessary
 import Navbar from './components/Navbar';
 import CreateAccountForm from './pages/CreateAccount';
 import AddClothingItem from './components/UploadImage';
+import UploadImageForm from './components/UploadImageForm';
 import ItemDetailPage from './pages/ItemDetailPage';
 import UpdateClothingItem from './pages/UpdateItemPage';
 import OutfitDetailPage from './pages/OutfitDetailPage';
@@ -19,6 +20,7 @@ const App = () => {
             <Routes>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/upload" element={<AddClothingItem />} />
+            <Route path="/uploadPhoto" element={<UploadImageForm />} />
             <Route path="/viewitems" element={<DashboardPage />} />
             <Route path="/viewitems/:id" element={<ItemDetailPage />} />
             <Route path="/viewitems/:id/update" element={<UpdateClothingItem />} />
