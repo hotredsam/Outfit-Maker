@@ -1,6 +1,5 @@
 import React from 'react';
 import './viewItems.css';
-import './ScrollableSection.css';
 import ScrollableSection from './ScrollableSection';
 
 
@@ -17,10 +16,9 @@ const ViewItems = () => {
         top: s,
         middle: s,
         bottom: s
-    }));
-    
-    return (
-        <div className='view-items-content'>
+    }));  
+  return (
+    <div className='view-items-content'>
             <h1>View Items</h1>
             <div className="scrollable-section-container">
                 <ScrollableSection images={images} />
