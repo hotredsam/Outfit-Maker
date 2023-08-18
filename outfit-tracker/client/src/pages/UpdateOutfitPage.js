@@ -21,7 +21,7 @@ const UpdateOutfit = (props) => {
     }
 
     const containerStyle = {
-        width: '70%', // Set the width to 70% of the parent container
+        width: '90%', // Set the width to 70% of the parent container
         margin: '0 auto', // Center the container horizontally
         marginLeft: '1%', // Adjust the left margin as needed
     };
@@ -110,7 +110,7 @@ const UpdateOutfit = (props) => {
 
     return (
         <div className="scrollable-section-container" style={parentStyle}>
-            <h1>Create an outfit!</h1>
+            <h1>Update an outfit!</h1>
             <h2>Enter a title:</h2>
             <div>
                 <input

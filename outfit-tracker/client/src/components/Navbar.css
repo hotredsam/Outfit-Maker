@@ -49,7 +49,7 @@
 
 .nav-button {
     background-color: white;
-    color: #FFC0CB;
+    color: #000000;
     border: 1px solid #FFC0CB;
     padding: 10px 15px;
     /* Increased padding */
@@ -79,7 +79,7 @@
 
 .side-button {
     background-color: white;
-    color: #FFC0CB;
+    color: #000000;
     border: 1px solid #FFC0CB;
     padding: 10px;
     /* Increased padding */
@@ -149,7 +149,7 @@
 
 .account-button {
     background-color: white;
-    color: #FFC0CB;
+    color: #000000;
     border: 1px solid #FFC0CB;
     padding: 10px 15px;
     cursor: pointer;
@@ -196,7 +196,7 @@
 
 .nav-button {
     background-color: white;
-    color: #FFC0CB;
+    color: #000000;
     border: 1px solid #FFC0CB;
     padding: 10px 15px;
     cursor: pointer;

@@ -35,7 +35,7 @@ const ViewItems = () => {
     }
 
     const containerStyle = {
-        width: '70%', // Set the width to 70% of the parent container
+        width: '90%', // Set the width to 70% of the parent container
         margin: '0 auto', // Center the container horizontally
         marginLeft: '1%', // Adjust the left margin as needed
     };

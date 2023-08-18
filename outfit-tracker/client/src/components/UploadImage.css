@@ -41,9 +41,26 @@
     font-size: 13px;
 }
 
+.modal button {
+    margin-top: 30px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.modal select {
+    font-size: 15px;
+    padding: 10px;
+}
+
+.modal * {
+    margin: 0px;
+}
+
 input {
     margin: 11px 0;
-    padding: 12px 16px;
+    padding: 12px;
     border-radius: 12px;
     border: 1.5px solid rgb(230,232,236);
+    font-size: 15px;
+    width: 500px;
 }

@@ -1,5 +1,5 @@
 // import Sidebar from './Sidebar';
-import './Navbar.css';
+import './Navbar.css'
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 

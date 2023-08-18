@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ClothingContext } from "../context/ClothingItemsContext";
 import ClothingFetch from "../apis/ClothingFetch";
+import '../components/UploadImage.css';
 
 const UpdateClothingItem = (props) => {
    const { id } = useParams();
@@ -35,7 +36,7 @@ const UpdateClothingItem = (props) => {
       color,
       category
     });
-    navigate("/viewitems/${id}");
+    navigate('/viewitems');
   };
 
   const handleClose = (e) => {
@@ -47,13 +48,14 @@ const UpdateClothingItem = (props) => {
     <div className="overlay">
         <div className="modal">
             <div className="form-title-container">
-                <h3>Let's update a clothing item!</h3>
+                <h1>Let's update a clothing item!</h1>
                 
                     <button onClick={handleClose}>X</button>
             </div>
 
             <form>
                 <div className="form-row">
+                <h2>Title:</h2>
                 <div className="col">
                     <input
                     value={title}
@@ -63,6 +65,7 @@ const UpdateClothingItem = (props) => {
                     placeholder="Title"
                     />
                 </div>
+                <h2>Photo Link:</h2>
                 <div className="col">
                     <input
                     value={photo}
@@ -72,6 +75,7 @@ const UpdateClothingItem = (props) => {
                     placeholder="Upload Photo"
                     />
                 </div>
+                <h2>Color:</h2>
                 <div className="col">
                     <input
                     value={color}
@@ -81,6 +85,7 @@ const UpdateClothingItem = (props) => {
                     placeholder="Color"
                     />
                 </div>
+                <h2>Category:</h2>
                 <div className="col">
                     <select
                     value={category}

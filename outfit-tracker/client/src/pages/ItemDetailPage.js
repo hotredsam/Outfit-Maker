@@ -43,7 +43,7 @@ const ItemDetailPage = () => {
 
 
     return (
-        <div>
+        <div className="item-details">
             <h1>{selectedClothing.title}</h1>
             {/* <div>{selectedClothing.photo}</div> */}
             <img src={selectedClothing.photo} alt='Photo Not Working' height="100px"/>

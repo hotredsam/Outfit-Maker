@@ -38,13 +38,14 @@ const AddClothingItem = () => {
     <div className="overlay">
         <div className="modal">
             <div className="form-title-container">
-                <h3>Let's create a clothing item!</h3>
+                <h1>Let's create a clothing item!</h1>
                 
                     <button onClick={handleClose}>X</button>
             </div>
 
             <form>
                 <div className="form-row">
+                <h2>Title:</h2>
                 <div className="col">
                     <input
                     value={title}
@@ -54,6 +55,7 @@ const AddClothingItem = () => {
                     placeholder="Title"
                     />
                 </div>
+                <h2>Photo Link:</h2>
                 <div className="col">
                     <input
                     value={photo}
@@ -63,6 +65,7 @@ const AddClothingItem = () => {
                     placeholder="Photo"
                     />
                 </div>
+                <h2>Color:</h2>
                 <div className="col">
                     <input
                     value={color}
@@ -72,6 +75,7 @@ const AddClothingItem = () => {
                     placeholder="Color"
                     />
                 </div>
+                <h2>Category:</h2>
                 <div className="col">
                     <select
                     value={category}
