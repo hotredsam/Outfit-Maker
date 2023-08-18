@@ -1,3 +1,14 @@
 .item-details * {
     text-align: center;
 }
+
+.item-details button {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }

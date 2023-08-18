@@ -50,6 +50,9 @@ const CreateOutfit = () => {
         marginLeft: '1%', // Adjust the left margin as needed
     };
 
+    const [titleA, setTitleA] = useState('');
+    const [titleB, setTitleB] = useState('');
+    const [titleC, setTitleC] = useState('');
     const { topsC, setTopsC } = useContext(ClothingContext);
     const { bottomsC, setBottomsC } = useContext(ClothingContext);
     const { shoesC, setShoesC } = useContext(ClothingContext);
@@ -139,31 +142,34 @@ const CreateOutfit = () => {
                 <div style={rowStyle} className="row">
                     {topsC && topsC.map((top) => (
                         <div className="section-column" onClick={() => setTops(top.photo)}>
-                            <img src={top.photo} alt={top.title} />
+                            <img src={top.photo} alt={top.title} onClick={() => setTitleA(top.title)} />
                         </div>
                     ))}
                 </div>
             </div>
+            <p>Selected top: {titleA}</p>
             <h2>Select a Bottom:</h2>
             <div className="scrollable-section" style={containerStyle}>
                 <div style={rowStyle} className="row">
                     {bottomsC && bottomsC.map((bottom) => (
                         <div className="section-column" onClick={() => setBottoms(bottom.photo)}>
-                            <img src={bottom.photo} alt={bottom.title} />
+                            <img src={bottom.photo} alt={bottom.title} onClick={() => setTitleB(bottom.title)} />
                         </div>
                     ))}
                 </div>
             </div>
+            <p>Selected bottom: {titleB}</p>
             <h2>Select a Shoe:</h2>
             <div className="scrollable-section" style={containerStyle}>
                 <div style={rowStyle} className="row">
                     {shoesC && shoesC.map((shoe) => (
                         <div className="section-column" onClick={() => setShoes(shoe.photo)}>
-                            <img src={shoe.photo} alt={shoe.title} />
+                            <img src={shoe.photo} alt={shoe.title} onClick={() => setTitleC(shoe.title)} />
                         </div>
                     ))}
                 </div>
             </div>
+            <p>Selected shoe: {titleC}</p>
             <h2>Notes:</h2>
             <div>
                 <input

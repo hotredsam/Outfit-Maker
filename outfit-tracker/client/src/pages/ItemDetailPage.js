@@ -46,13 +46,13 @@ const ItemDetailPage = () => {
         <div className="item-details">
             <h1>{selectedClothing.title}</h1>
             {/* <div>{selectedClothing.photo}</div> */}
-            <img src={selectedClothing.photo} alt='Photo Not Working' height="100px"/>
+            <img className="center" src={selectedClothing.photo} alt='Photo Not Working' height="300px"/>
             <h2>Color:</h2>
             <div>{selectedClothing.color}</div>
             <h2>Category:</h2>
             <div>{selectedClothing.category}</div>
-            <button onClick={(e) => handleUpdate(e, selectedClothing.clothing_id)}>Edit</button>
-            <button onClick={(e) => handleDelete(e, selectedClothing.clothing_id)}>Delete</button>
+            <button className="center" onClick={(e) => handleUpdate(e, selectedClothing.clothing_id)}>Edit</button>
+            <button className="center" onClick={(e) => handleDelete(e, selectedClothing.clothing_id)}>Delete</button>
         </div>
     )
 };

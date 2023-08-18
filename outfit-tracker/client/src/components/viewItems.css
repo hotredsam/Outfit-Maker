@@ -3,7 +3,16 @@
 
 }
 
-h2 {
-    padding-left: 30px;
+ .scrollable-section-container h1, h2, p {
+    padding-left: 20px;
     padding-top: 30px;
+}
+
+.scrollable-section-container button {
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.scrollable-section-container input {
+    margin-left: 20px;
 }
