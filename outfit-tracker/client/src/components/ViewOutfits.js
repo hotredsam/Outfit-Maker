@@ -25,7 +25,7 @@ const ViewOutfits = () => {
       try {
         const response = await OutfitsFetch.get("/");
         console.log(response.data);
-        setOutfits(response.data);
+        setOutfits(response.data.data.outfits);
       } catch (err) { }
     };
 

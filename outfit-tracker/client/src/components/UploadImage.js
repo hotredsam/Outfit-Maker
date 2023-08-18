@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ClothingFetch from "../apis/ClothingFetch";
 import './UploadImage.css';
-import FileBase64 from 'react-file-base64';
 import { useNavigate } from "react-router-dom";
 
 const AddClothingItem = () => {
@@ -55,11 +54,6 @@ const AddClothingItem = () => {
                     placeholder="Title"
                     />
                 </div>
-                {/* <FileBase64
-                    type="file"
-                    multiple={false}
-                    onDone={({ base64 }) => setPhoto({ base64 })}
-                /> */}
                 <div className="col">
                     <input
                     value={photo}
