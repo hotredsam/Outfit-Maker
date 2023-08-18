@@ -8,7 +8,12 @@ Inspiration and/or explain the app (1-3 lines) - Inspiration was an ecommerce si
 
 How to use the app - To use the app you would 1 - create items - upload the images of the different clothes (Total 10 images), view items - this is a list of items uploaded, create outfits - you can also just match your outfits manually. View outfits - to save all outfits matched. As an addition if time permits, for the app we can create functionality to randomly select different outfits and color contract, on different matches. 
 
-List the technologies - Express, node, react, Postgres SQL, trello, firebase, Figma and javascript, HTML and CSS.
+List the technologies - Express, node, react, Postgres SQL, trello, firebase, Figma and javascript, HTML and CSS. We used boostrap for look and feel.
+
+We used Firebase for deployment
+Multiple clothing links from H & M
+We installed boostrap for visualization
+We used video imagery listed as MP4 clothing file
 
 Outstanding bugs and/or unfinished functionality - Login and Create account functionality was not 100% completed. 
 
